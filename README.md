@@ -1,194 +1,64 @@
-# 🎓 Gaokao Vocab Master (高考单词大师)
+# 词屿 · 英语单词学习
 
-一款专为高中生设计的高效英语单词记忆应用。内置完整高考 3500+ 词汇（实际收录 3817 词），界面美观大气，交互流畅，支持多设备响应式适配，助你轻松攻克英语词汇关！
+词屿是一款支持手机、平板和桌面浏览器的英语词汇学习应用。当前版本提供初中、高中、大学四级、大学六级、雅思、考研、托福和 SAT 八本词书；它支持新词卡片、每日测验、已学词复习、词典搜索和学习记录导入导出。
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![React](https://img.shields.io/badge/React-18.3-61DAFB.svg)
-![Vite](https://img.shields.io/badge/Vite-6.0-646CFF.svg)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6.svg)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-06B6D4.svg)
-![Tests](https://img.shields.io/badge/tests-35%20passed-brightgreen.svg)
+## 学习方式
 
-<img width="4400" height="2724" alt="image" src="https://github.com/user-attachments/assets/c7b86405-a5a8-4031-aa6f-176c54588804" />
+- 所有词书共享单词学习进度。相同拼写的词条在切换词书后不会再次作为新词出现。
+- 新词默认每天 20 个；已学复习默认每天随机抽取 30 个，并优先复习到期词。可在设置中调整目标。
+- 测验从当前词书随机抽取词条；复习题仅从已经学过的词条中抽取。答题结果会更新复习间隔。
+- 进度默认保存在当前设备浏览器中，可导出 JSON 并在另一台设备导入。当前没有账号或云端同步。
+- 网页支持安装为 PWA，离线缓存应用与词库。Windows 提供 Electron 便携版；Android 使用 Capacitor 原生壳。
 
-## ✨ 功能特性 (Features)
+## 本地运行
 
-### 📚 完整词库
-- 收录高考英语大纲 **3817 个单词**
-- 每个单词包含：音标、词性、详细中文释义
-- 支持英文单词和中文释义双向搜索
+要求 Node.js 22.12 或更高版本。
 
-### 📊 可视化进度
-- 主页仪表盘实时展示背诵进度
-- 圆形进度环 + 百分比显示
-- 已掌握 / 总词汇数一目了然
-
-### 🧠 沉浸式背诵 (Study Mode)
-- **精美单词卡片**：简洁优雅的设计，支持点击翻转查看释义
-- **智能标记系统**：
-  - **"Mastered!"**：标记已掌握，自动更新进度
-  - **"Review Later"**：标记待复习，稍后回顾
-- **流畅导航**：支持左右箭头切换，进度条实时更新
-- **状态标签**：Mastered / Reviewing 状态清晰标识
-
-### 📝 每日测验 (Daily Quiz)
-- 智能算法随机抽取 20 个单词生成测验
-- 标准四选一题型
-- 即时颜色反馈（正确/错误）
-- 测验结束显示分数报告和鼓励评语
-
-### 📖 全能词典
-- 支持英文单词或中文释义模糊搜索
-- 无限滚动 (Infinite Scroll) 技术，流畅加载长列表
-- 列表中可直接标记单词为"已掌握"
-- 显示掌握状态（Mastered 带勾选图标）
-
-### 📱 多设备响应式设计
-- **手机端**：底部固定导航栏，单手操作友好
-- **平板端 (iPad)**：可折叠侧边栏，横竖屏适配
-- **桌面端**：固定侧边栏导航，宽屏布局优化
-- 完美适配各种屏幕尺寸
-
-### 💾 数据持久化
-- 学习进度自动保存到浏览器 LocalStorage
-- 支持多标签页同步
-- 无需联网，随时随地接着背
-- 一键重置进度功能
-
-### 🛡️ 质量保障
-- **错误边界处理**：应用崩溃时友好提示
-- **数据加载错误处理**：网络异常时显示错误页面
-- **输入验证**：防止 XSS 等安全问题
-- **性能优化**：GPU 加速动画，60fps 流畅体验
-
-## 🛠️ 技术栈 (Tech Stack)
-
-本项目采用现代前端技术栈构建，轻量且高效：
-
-| 技术 | 版本 | 用途 |
-|------|------|------|
-| [React](https://react.dev/) | 18.3.1 | UI 框架 |
-| [TypeScript](https://www.typescriptlang.org/) | 5.7.3 | 类型安全 |
-| [Vite](https://vitejs.dev/) | 6.0.11 | 构建工具 |
-| [Tailwind CSS](https://tailwindcss.com/) | 3.4.17 | 样式框架 |
-| [Vitest](https://vitest.dev/) | 3.0.4 | 单元测试 |
-| [ESLint](https://eslint.org/) | 9.19.0 | 代码检查 |
-
-### 项目结构
-```
-src/
-├── components/          # React 组件
-│   ├── Dashboard/       # 主页仪表盘
-│   ├── StudyMode/       # 学习模式
-│   ├── QuizMode/        # 测验模式
-│   ├── WordList/        # 单词列表
-│   ├── ErrorBoundary.tsx # 错误边界
-│   └── Icons.tsx        # 图标组件
-├── hooks/               # 自定义 Hooks
-│   ├── useLocalStorage.ts
-│   └── useDebounce.ts
-├── utils/               # 工具函数
-│   ├── parser.ts        # 词汇解析
-│   ├── quiz.ts          # 测验逻辑
-│   └── array.ts         # 数组操作
-├── data/                # 词汇数据
-├── types/               # TypeScript 类型
-└── App.tsx              # 主应用组件
+```sh
+npm ci
+npm run dev
 ```
 
-## 🚀 快速开始 (Quick Start)
+打开终端输出的本地地址即可预览。常用检查：
 
-### 环境要求
-- Node.js >= 18.0.0
-- npm >= 9.0.0
-
-### 安装步骤
-
-1. **克隆项目**
-   ```bash
-   git clone https://github.com/Jimmy-xuzimo/gaokao-vocab.git
-   cd gaokao-vocab
-   ```
-
-2. **安装依赖**
-   ```bash
-   npm install
-   ```
-
-3. **启动开发服务器**
-   ```bash
-   npm run dev
-   ```
-   打开浏览器访问 `http://localhost:5173` 即可开始使用。
-
-### 可用脚本
-
-| 命令 | 说明 |
-|------|------|
-| `npm run dev` | 启动开发服务器 |
-| `npm run build` | 生产环境构建 |
-| `npm run preview` | 预览生产构建 |
-| `npm test` | 运行单元测试 |
-| `npm run test:coverage` | 运行测试并生成覆盖率报告 |
-| `npm run lint` | 运行 ESLint 检查 |
-| `npm run typecheck` | 运行 TypeScript 类型检查 |
-
-
-## 🧪 测试
-
-项目包含完整的单元测试套件：
-
-```bash
-# 运行测试
-npm test
-
-# 运行测试并生成覆盖率报告
-npm run test:coverage
+```sh
+npm run typecheck
+npm test -- --run
+npm run lint
+npm run build
 ```
 
-**测试覆盖范围**：
-- ✅ 词汇解析逻辑 (12 个测试)
-- ✅ 测验生成算法 (14 个测试)
-- ✅ 数组工具函数 (9 个测试)
-- **总计：35 个测试全部通过**
+构建完成后可通过 `npm run preview` 预览生产包。PWA 缓存包含应用文件和词库 JSON，首次安装需要下载约 8 MB 词库。
 
-## 🤝 贡献指南
+## Windows 桌面版
 
-欢迎提交 Issue 或 Pull Request 来改进这个项目！
+```sh
+npm run desktop:build
+```
 
-### 提交 PR 流程
+便携版 `.exe` 输出到 `dist-electron/`。本地开发可运行 `npm run desktop:dev`；当前打包目标为 Windows x64。
 
-1. Fork 本仓库
-2. 创建你的功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交你的更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 打开一个 Pull Request
+## Android
 
-### 代码规范
+先运行 `npm run build`，再运行：
 
-- 使用 TypeScript 编写代码
-- 遵循 ESLint 规则
-- 为新功能添加单元测试
-- 保持组件简洁，单一职责
+```sh
+npx cap sync android
+```
 
-## 📝 更新日志
+使用 Android Studio 打开 `android/` 项目即可本地运行或构建 APK。APK 输出到 `android/app/build/outputs/apk/debug/`。正式签名、商店资料和公开发布尚未配置。
 
-### v1.0.0 (2025-02-14)
-- ✨ 初始版本发布
-- 📚 完整收录 3817 个高考词汇
-- 📱 支持手机、平板、桌面端响应式适配
-- 🧠 沉浸式单词卡片学习模式
-- 📝 智能测验系统
-- 💾 LocalStorage 数据持久化
-- 🛡️ 完整的错误处理和边界情况处理
-- 🧪 35 个单元测试全覆盖
+## 词库与许可
 
-## 📄 许可证
+词书和数据来源、已知许可、合并规则及 PDF 分发限制见 [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md)。源代码许可证不自动覆盖第三方词库或用户 PDF 内容。公开发布前需确认两份 PDF 的再分发权利；若尚未确认，应省略对应 PDF 数据并重新生成词库。
 
-MIT License © 2025 Jimmy Xu
+## 项目网站
 
-祝各位学子金榜题名！🎉
+- 项目页：https://jimmy-xuzimo.github.io/gaokao-vocab/
+- 网页应用：https://jimmy-xuzimo.github.io/gaokao-vocab/app/
+- `npm run pages:build` 生成项目页和子路径网页应用，输出到 `dist-pages/`。
+- 推送 main 后由 GitHub Actions 部署 Pages，同时构建 Windows 便携版和 Android 测试 APK。
 
----
+## 界面偏好
 
-**⭐ 如果这个项目对你有帮助，请给个 Star 支持一下！**
+默认跟随系统明暗，设置页可选择浅色、深色以及林间绿、海盐蓝、鸢尾紫、暖杏橙四种配色。高中与高考词表按规范化英文拼写合并；旧版高考词书选择自动迁移到高中，已学单词 ID 保留。

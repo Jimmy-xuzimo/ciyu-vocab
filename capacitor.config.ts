@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.xuzimo.gaokao.vocab',
-  appName: '高考单词大师',
+  appName: '词屿',
   webDir: 'dist',
   server: {
     androidScheme: 'https'
@@ -11,7 +11,7 @@ const config: CapacitorConfig = {
     SplashScreen: {
       launchShowDuration: 2000,
       launchAutoHide: true,
-      backgroundColor: '#f8fafc',
+      backgroundColor: '#f5f7f4',
       androidSplashResourceName: 'splash',
       androidScaleType: 'CENTER_CROP'
     }

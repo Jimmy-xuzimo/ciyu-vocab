@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">高考单词大师</string>
-    <string name="title_activity_main">高考单词大师</string>
+    <string name="app_name">词屿</string>
+    <string name="title_activity_main">词屿</string>
     <string name="package_name">com.xuzimo.gaokao.vocab</string>
     <string name="custom_url_scheme">com.xuzimo.gaokao.vocab</string>
 </resources>

@@ -8,32 +8,35 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      includeAssets: ['favicon.ico', 'favicon.svg'],
       manifest: {
-        name: '高考单词大师 (Gaokao Vocab Master)',
-        short_name: '单词大师',
-        description: '3500个高考英语单词高效背诵与测试，助你轻松攻克英语词汇关！',
-        theme_color: '#4f46e5',
-        background_color: '#f8fafc',
+        name: '词屿 · 英语单词学习',
+        short_name: '词屿',
+        description: '覆盖初高中、高考、四六级与雅思的英语词汇学习工具。',
+        theme_color: '#2d6851',
+        background_color: '#f5f7f4',
         display: 'standalone',
-        orientation: 'portrait',
-        scope: '/',
-        start_url: '/',
+        orientation: 'any',
+        scope: './',
+        start_url: './',
         icons: [
           {
-            src: 'pwa-192x192.png',
+            src: 'icons/icon-192.png',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any maskable'
           },
           {
-            src: 'pwa-512x512.png',
+            src: 'icons/icon-512.png',
             sizes: '512x512',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any maskable'
           }
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,json}'],
+        maximumFileSizeToCacheInBytes: 12 * 1024 * 1024,
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,

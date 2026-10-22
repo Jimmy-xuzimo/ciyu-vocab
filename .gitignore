@@ -6,6 +6,7 @@ node_modules
 # Build outputs
 dist
 dist-ssr
+dist-electron
 *.local
 
 # Editor directories and files
@@ -33,11 +34,9 @@ lerna-debug.log*
 
 # Testing
 coverage
-*.test.ts
-*.test.tsx
-*.spec.ts
-*.spec.tsx
 vitest.config.ts
+__pycache__/
+*.py[cod]
 
 # Trae
 .trae
@@ -50,3 +49,5 @@ android/local.properties
 
 # Capacitor
 ios/
+
+dist-pages/
