@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | [pluto0x0/word3500](https://github.com/pluto0x0/word3500) | 高考词汇 | MIT；重分发时保留上游版权与许可声明 |
 | [KyleBing/english-vocabulary](https://github.com/KyleBing/english-vocabulary) | 初中、高中、四级、六级、雅思、考研、托福、SAT | BSD-3-Clause；重分发时保留版权、许可和免责声明 |
-| [本项目旧版词表](https://github.com/Jimmy-xuzimo/gaokao-vocab) | 高考词汇及旧学习 ID 对照 | 项目所有者提供的旧词表；第三方词条许可与代码许可分别看待 |
+| [本项目旧版词表](https://github.com/Jimmy-xuzimo/ciyu) | 高考词汇及旧学习 ID 对照 | 项目所有者提供的旧词表；第三方词条许可与代码许可分别看待 |
 | 用户提供的四级 PDF | 四级词汇、音标与释义 | 权利状态未确认；仅用于本地构建，公开发布词条前须确认许可 |
 | 用户提供的六级 PDF | 六级词汇与释义 | 权利状态未确认；仅用于本地构建，公开发布词条前须确认许可 |
 

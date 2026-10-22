@@ -4,10 +4,10 @@
 
 ## 下载与在线使用
 
-- [网页版：立即学习](https://jimmy-xuzimo.github.io/gaokao-vocab/app/)
-- [Windows x64 便携版下载](https://github.com/Jimmy-xuzimo/gaokao-vocab/releases/latest/download/lexiday-windows-x64.exe)：下载后双击运行，当前未做代码签名。
-- [Android APK 下载](https://github.com/Jimmy-xuzimo/gaokao-vocab/releases/latest/download/lexiday-android.apk)：支持 Android 7.0 及以上，当前使用测试签名。
-- [全部版本、更新说明与 SHA-256 校验文件](https://github.com/Jimmy-xuzimo/gaokao-vocab/releases)
+- [网页版：立即学习](https://jimmy-xuzimo.github.io/ciyu/app/)
+- [Windows x64 便携版下载](https://github.com/Jimmy-xuzimo/ciyu/releases/latest/download/lexiday-windows-x64.exe)：下载后双击运行，当前未做代码签名。
+- [Android APK 下载](https://github.com/Jimmy-xuzimo/ciyu/releases/latest/download/lexiday-android.apk)：支持 Android 7.0 及以上，当前使用测试签名。
+- [全部版本、更新说明与 SHA-256 校验文件](https://github.com/Jimmy-xuzimo/ciyu/releases)
 
 安卓测试包在不同构建间可能无法直接覆盖安装。请先在设置中导出学习记录，再卸载旧版、安装新版并导入记录。网页、电脑、安卓使用同一份词库，学习记录通过导入导出迁移，当前没有云端同步。
 
@@ -63,8 +63,8 @@ npx cap sync android
 
 ## 项目网站
 
-- 项目页：https://jimmy-xuzimo.github.io/gaokao-vocab/
-- 网页应用：https://jimmy-xuzimo.github.io/gaokao-vocab/app/
+- 项目页：https://jimmy-xuzimo.github.io/ciyu/
+- 网页应用：https://jimmy-xuzimo.github.io/ciyu/app/
 - `npm run pages:build` 生成项目页和子路径网页应用，输出到 `dist-pages/`。
 - 推送 main 后由 GitHub Actions 部署 Pages，同时构建 Windows 便携版和 Android 测试 APK。推送与 package.json 版本一致的 `v*` 标签（如 `v2.0.0`）时，两个平台均构建成功后自动发布到 Releases，附带 SHA-256 校验文件。
 

@@ -1,7 +1,7 @@
 {
   "name": "lexiday-vocabulary",
   "private": true,
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "electron/main.cjs",
   "type": "module",
   "scripts": {
@@ -14,7 +14,7 @@
     "test:coverage": "vitest run --coverage",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "typecheck": "tsc --noEmit",
-    "pages:build": "npm run typecheck && vite build --base=/gaokao-vocab/app/ --outDir dist-pages/app && node scripts/prepare-pages.mjs"
+    "pages:build": "npm run typecheck && vite build --base=/ciyu/app/ --outDir dist-pages/app && node scripts/prepare-pages.mjs"
   },
   "dependencies": {
     "@capacitor/android": "^8.1.0",
