@@ -347,7 +347,7 @@ function App() {
         </div>
 
         <div className="sidebar-bottom">
-          <a className="platform-card" href="https://Jimmy-xuzimo.github.io/ciyu/" target="_blank" rel="noreferrer">
+          <a className="platform-card" href="https://Jimmy-xuzimo.github.io/ciyu-vocab/" target="_blank" rel="noreferrer">
             <div className="platform-icon"><Icon name="download" size={17} /></div>
             <div><strong>随时继续学习</strong><p>网页、电脑、安卓共用词库</p></div>
             <span className="platform-install"><Icon name="arrow" size={15} /></span>
@@ -477,7 +477,7 @@ function SettingsScreen({ preferences, onChange, learning, onNewGoal, onReviewGo
     <section className="report-panel"><div><h2>界面模式</h2><p>默认跟随系统，也可以固定为浅色或深色。</p></div><div className="appearance-options">{([['system', '跟随系统'], ['light', '浅色模式'], ['dark', '深色模式']] as const).map(([value, label]) => <button key={value} className="preference-option" aria-pressed={preferences.appearance === value} onClick={() => onChange({ ...preferences, appearance: value })}><Icon name={value === 'dark' ? 'spark' : 'sun'} size={22} /><strong>{label}</strong>{preferences.appearance === value && <Icon name="check" size={16} />}</button>)}</div></section>
     <section className="report-panel"><div><h2>主题颜色</h2><p>四种配色均支持浅色和深色模式。</p></div><div className="palette-options">{([['forest', '林间绿', '#2d6851'], ['ocean', '海盐蓝', '#377fa5'], ['violet', '鸢尾紫', '#8062b2'], ['amber', '暖杏橙', '#a27036']] as const).map(([value, label, color]) => <button key={value} className="preference-option" aria-pressed={preferences.palette === value} onClick={() => onChange({ ...preferences, palette: value })}><span className="palette-swatch" style={{ background: color }} /><strong>{label}</strong>{preferences.palette === value && <Icon name="check" size={16} />}</button>)}</div></section>
     <section className="report-panel"><div><h2>每日学习目标</h2><p>新词按当前词书学习；复习从所有已经学过的词中抽取。</p></div><div className="goal-controls"><label>每日新词<input type="number" min={1} max={100} value={learning.dailyNewGoal} onChange={onNewGoal} />个</label><label>每日复习<input type="number" min={4} max={100} value={learning.dailyReviewGoal} onChange={onReviewGoal} />个</label></div></section>
-    <section className="report-panel"><div><h2>在其他设备上使用</h2><p>词库相同，学习记录可在学习报告中导出和导入。</p></div><div className="backup-actions"><a className="button button-outline" href="https://Jimmy-xuzimo.github.io/ciyu/" target="_blank" rel="noreferrer">访问项目网站 <Icon name="arrow" size={16} /></a><button className="button button-dark" onClick={onInstall}>安装网页应用</button></div></section>
+    <section className="report-panel"><div><h2>在其他设备上使用</h2><p>词库相同，学习记录可在学习报告中导出和导入。</p></div><div className="backup-actions"><a className="button button-outline" href="https://Jimmy-xuzimo.github.io/ciyu-vocab/" target="_blank" rel="noreferrer">访问项目网站 <Icon name="arrow" size={16} /></a><button className="button button-dark" onClick={onInstall}>安装网页应用</button></div></section>
   </div>;
 }
 
